@@ -1,0 +1,11 @@
+services:
+
+  postgres-db:
+    image: postgres:16
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: greenbay_db_user
+      POSTGRES_PASSWORD: greenbay_db_password
+      POSTGRES_DB: greenbay_db
