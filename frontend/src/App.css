@@ -35,9 +35,15 @@ body {
 h1 {
   color: #2f4f4f;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.gbp-logo {
+  width: 250px;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
 
 .login-form {
