@@ -1,5 +1,5 @@
 import { useState } from "react";
-import gbpLogo from './assets/gbp-logo.jpg';
+import gbpLogo from '../assets/gbp-logo.jpg';
 
 export function Main() {
 
