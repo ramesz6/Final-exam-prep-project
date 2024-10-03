@@ -21,11 +21,11 @@ public class UserServiceImpl implements UserService {
 
     User user = User.builder()
 
-            .userName(loginRequestDto.username())
+            .username(loginRequestDto.username())
             .password(this.passwordEncoder.encode(loginRequestDto.password()))
             .build();
 
-    if (userRepository.findByUserName(loginRequestDto.username()).equals(user)) {
+    if (userRepository.findByUsername(loginRequestDto.username()).equals(user)) {
       return new LoginResponseDto(authService.generateToken(user));
     }
     userRepository.save(user);
@@ -36,9 +36,9 @@ public class UserServiceImpl implements UserService {
   @Override
   public void loadUsers() {
     if (userRepository.findAll().isEmpty()) {
-      userRepository.save(User.builder().userName("Admin1").password("Password123").build());
-      userRepository.save(User.builder().userName("Admin2").password("Password124").build());
-      userRepository.save(User.builder().userName("Admin3").password("Password125").build());
+      userRepository.save(User.builder().username("Admin1").password("Password123").build());
+      userRepository.save(User.builder().username("Admin2").password("Password124").build());
+      userRepository.save(User.builder().username("Admin3").password("Password125").build());
     }
   }
 }

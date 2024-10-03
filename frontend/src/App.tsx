@@ -1,7 +1,6 @@
 import './App.css';
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Main } from './pages/Main'
-import { Login } from './pages/Login'
 import { Sell } from './pages/Sell'
 
 
@@ -12,10 +11,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Main />,
-      },
-      {
-        path: "login",
-        element: <Login />
       },
       {
         path: "sell",
