@@ -9,6 +9,7 @@ import { useGreenBayState } from '../state'
 export function Login() {
 
     const { setAuth } = useGreenBayState();
+    
     const [loginFormData, setLoginFormData] = useState<LoginForm>({
         username: "",
         password: "",

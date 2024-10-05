@@ -30,6 +30,7 @@ const useGreenBayState = create<GreenBayState>((set) => ({
                     token,
                 },
             });
+            localStorage.setItem("token",JSON.stringify(token))
         } catch (_e) {
             set({ auth: { token: null, user: null } });
         }
