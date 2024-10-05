@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import jwtDecode from "jwt-decode"; // Correct import
-import { User } from "./types/index";
+import { jwtDecode } from "jwt-decode";
+import { AuthUser } from "./types/index";
 
 type JwtPayload = {
     username: string;
@@ -9,7 +9,7 @@ type JwtPayload = {
 
 type Auth = {
     token: string | null;
-    user: User | null;
+    user: AuthUser | null;
 };
 
 interface GreenBayState {
@@ -23,15 +23,15 @@ const useGreenBayState = create<GreenBayState>((set) => ({
     logout: () => set({ auth: { token: null, user: null } }),
     setAuth: (token: string) => {
         try {
-            const { sub } = jwtDecode<JwtPayload>(token); // Decode JWT
+            const { sub } = jwtDecode<JwtPayload>(token);
             set({
                 auth: {
-                    user: { username: sub }, // Updating the user with the decoded token
+                    user: { username: sub },
                     token,
                 },
             });
         } catch (_e) {
-            set({ auth: { token: null, user: null } }); // Handle error
+            set({ auth: { token: null, user: null } });
         }
     },
 }));

@@ -1,7 +1,5 @@
-export type User = {
-    userName: string;
-    password: string;
-    wallet?: number;
+export type AuthUser = {
+    username: string;
 };
 
 export type Sellable = {
